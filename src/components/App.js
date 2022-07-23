@@ -1,18 +1,14 @@
-import React, { Component, useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import '../styles/App.css';
 
 const App = () => {
-  // write your code here 
-  const[seconds, setSeconds] = useState(0);
+
+  let [count, setCount] = useState(0)
 
   return (
-    <div className="wrapper">
-      <div id="whole-center">
-        <h1>
-          Reverse countdown for<input id="timeCount" onKeyDown={setSeconds-1} /> sec.
-        </h1>
-      </div>
-      <div id="current-time">{setSeconds(0)}</div>
+    <div className="ball">
+      <h1 className="count" onDoubleClick={() => { alert("cant edit it") }}>{count}</h1>
+      <button className='increment-button' onClick={() => { setCount(count - 1) }}>Increment</button>
     </div>
   )
 }
